@@ -2,65 +2,16 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { composeProviders, createProvider } from './utils/composeProviders';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { StoreProvider } from './contexts/StoreContext';
 
-interface ProviderComponent<TProps> {
-  Component: React.ComponentType<React.PropsWithChildren<TProps>>;
-  props?: Omit<TProps, 'children'>;
-}
-
-function createProviderComponent<TProps>(
-  Component: React.ComponentType<React.PropsWithChildren<TProps>>,
-  props?: Omit<TProps, 'children'>
-): ProviderComponent<TProps> {
-  return { Component, props };
-}
-
-function composeProviderComponents<T extends Array<ProviderComponent<any>>>(
-  componentProviders: T
-): React.ComponentType<React.PropsWithChildren> {
-  const Provider: React.FunctionComponent<React.PropsWithChildren> = ({
-    children,
-  }) =>
-    componentProviders.reduceRight<JSX.Element>(
-      (prev, { Component, props }) => <Component {...props}>{prev}</Component>,
-      <>{children}</>
-    );
-
-  return Provider;
-}
-
-interface ComponentAProps extends React.PropsWithChildren {
-  hello: string;
-}
-
-function ComponentA({ hello, children }: ComponentAProps) {
-  return (
-    <div>
-      <p>Welcome {hello} to ComponentA!</p>
-      {children}
-    </div>
-  );
-}
-
-interface ComponentBProps extends React.PropsWithChildren {
-  hi: string;
-}
-
-function ComponentB({ hi, children }: ComponentBProps) {
-  return (
-    <div>
-      <p>Welcome {hi} to ComponentB!</p>
-      {children}
-    </div>
-  );
-}
-
-const providerComponents = [
-  createProviderComponent(ComponentA, { hello: 'Fast' }),
-  createProviderComponent(ComponentB, { hi: 'Nguyen' }),
+const providers = [
+  createProvider(ThemeProvider, { theme: {} }),
+  createProvider(StoreProvider, { store: {} }),
 ];
 
-const ProviderComponent = composeProviderComponents(providerComponents);
+const ProviderComponent = composeProviders(providers);
 
 function App() {
   const [count, setCount] = useState(0);
