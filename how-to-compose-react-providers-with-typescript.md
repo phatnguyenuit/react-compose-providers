@@ -16,9 +16,9 @@ If you don't have these two items, it may become a bit hard for you to understan
 
 ## Problem statement
 
-React is still trendy nowaday in general, and using React Context APIs becomes a common pattern to share global data between components as well.
+React is still trendy nowadays in general, and using React Context APIs has become a common pattern to share global data between components as well.
 
-In the real life React applications, we may have lot of React Context Providers in the root Component (**App** component for example). They become deeply JSX tree and hard to be read, maintained, and tested.
+In real-life React applications, we may have a lot of React Context Providers in the root component (**App** component for example). They become deeply JSX tree, hard to read, maintain, and test.
 
 ```tsx
 <Provider1>
