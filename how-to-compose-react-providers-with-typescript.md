@@ -203,6 +203,34 @@ function composeProviders<TProviders extends Array<Provider<any>>>(
 }
 ```
 
+At this step, we have TypeScript types for our utility but looks like it does not work well, because we may have differnt Context value types.
+
+IDE should suggest us to provide the correct `props` for the given `Provider` instead of type anything as you wish
+
+In this situation, we will create one more function to prepare `Provider` component details for every single `Provider`
+
+```ts
+export function createProvider<TProps>(
+  Component: React.ComponentType<React.PropsWithChildren<TProps>>,
+  props?: Omit<TProps, "children">
+): Provider<TProps> {
+  return { Component, props };
+}
+```
+
+`providers` now can be:
+
+```ts
+const providers = [
+  createProvider(Provider1),
+  createProvider(Provider2),
+  createProvider(Provider3),
+  createProvider(Provider4, { value: "someValue" }),
+];
+```
+
+Wrapping all parts together, we now have `Provider` which contains multiple `Providers` following the article goal
+
 ## Conclusion
 
 ## References
