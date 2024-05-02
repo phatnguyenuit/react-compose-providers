@@ -12,16 +12,20 @@ export function createProvider<TProps>(
   return { Component, props };
 }
 
-export function composeProviders<T extends Array<Provider<any>>>(
-  providers: T
+export function composeProviders<TProviders extends Array<Provider<any>>>(
+  providers: TProviders
 ): React.ComponentType<React.PropsWithChildren> {
   const Provider: React.FunctionComponent<React.PropsWithChildren> = ({
     children,
   }) =>
-    providers.reduceRight<JSX.Element>(
-      (prev, { Component, props }) => <Component {...props}>{prev}</Component>,
-      <>{children}</>
-    );
+    {
+      const initialJSX = <>{children}</>;
+
+      return providers.reduceRight<JSX.Element>(
+        (prevJSX, { Component: CurrentProvider, props = {} }) => <CurrentProvider {...props}>{prevJSX}</CurrentProvider>,
+        initialJSX
+      );
+    };
 
   return Provider;
 }
