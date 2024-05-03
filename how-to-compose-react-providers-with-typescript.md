@@ -1,6 +1,6 @@
 # How to compose React Providers with TypeScript
 
-![Tree and sunset](sergei-a--heLWtuAN3c-unsplash.jpg)
+![Tree and sunset](https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 > Photo by <a href="https://unsplash.com/@sakulich?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sergei A</a> on <a href="https://unsplash.com/photos/pine-trees-field-near-mountain-under-sunset--heLWtuAN3c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
