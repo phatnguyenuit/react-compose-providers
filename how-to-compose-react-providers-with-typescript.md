@@ -49,7 +49,7 @@ Is there any way to simplify the above JSX tree, just `App` and all context prov
 There are some ways to resolve the above problem:
 
 - Create an all-in-one hardcoded Provider that contains all providers we need
-- Create one Provider which receives all providers as a property
+- Create one Provider receives all providers as a property
 - Create one utility to compose all providers into one provider
 - ... more approaches I have not figured out :\) ...
 
@@ -173,17 +173,6 @@ interface Provider<TProps> {
 }
 ```
 
-- Define a Provider type including Provider `Component`, and its props (if any)
-
-```ts
-import React from "react";
-
-interface Provider<TProps> {
-  Component: React.ComponentType<React.PropsWithChildren<TProps>>;
-  props?: Omit<TProps, "children">;
-}
-```
-
 - Define types for `composeProviders` utility
 
 ```tsx
@@ -214,7 +203,7 @@ IDE should suggest the correct `props` for the given `Provider` instead of typin
 In this situation, we will create one more function to prepare `Provider` component details for every single `Provider`
 
 ```ts
-export function createProvider<TProps>(
+function createProvider<TProps>(
   Component: React.ComponentType<React.PropsWithChildren<TProps>>,
   props?: Omit<TProps, "children">
 ): Provider<TProps> {
