@@ -275,7 +275,7 @@ To sum up, we have 4 steps to compose React components with TypeScript:
 
 With these 4 steps, we can extract common logic and share everywhere to compose React providers across React projects.
 
-Hope you guys can find it's helpful and may resolve your current concern how to compose React providers with TypeScript.
+Hope you guys can find it's helpful and may resolve your current concern on how to compose React providers with TypeScript.
 
 See you next time!
 
