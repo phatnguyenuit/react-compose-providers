@@ -5,6 +5,7 @@ Example repository of composing React providers with TypeScript
 ## Published articles
 
 - [How to compose React Providers with TypeScript - GitHub](./how-to-compose-react-providers-with-typescript.md)
+- [How to compose React Providers with TypeScript - Gist](https://gist.github.com/phatnguyenuit/68122170e317d13e7148c7563be021b6)
 
 ## Vite + ReactJS + TypeScript template
 
