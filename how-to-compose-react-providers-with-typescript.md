@@ -13,8 +13,8 @@ Ready? let's go!
 
 ## Prerequisites
 
-- Have ReactJS projects and use React Contexts
-- Have TypeScript projects to understand how typings are structured and work in the development environment
+- Have **ReactJS** projects and use React Contexts
+- Have **TypeScript** projects to understand how typings are structured and work in the development environment
 
 If you don't have these two items, it may become a bit hard for you to understand what is covered by this article.
 
@@ -270,7 +270,7 @@ const setupTest = (testProps: TestComponentProps) => {
 
 ## Conclusion
 
-To sum up, we have 4 steps to compose React components with TypeScript:
+To sum up, we have 4 steps to compose React providers with TypeScript:
 
 1. Normalise nested JSX tree
 2. Dead simple implementation of composing utility
@@ -281,7 +281,7 @@ With these 4 steps, we can extract common logic and share it everywhere to compo
 
 I hope you guys can find it helpful and resolve your current concern on how to compose React providers with TypeScript.
 
-See you next time!
+See you next time! :-\)
 
 ## References
 
