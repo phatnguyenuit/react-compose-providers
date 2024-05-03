@@ -2,6 +2,10 @@
 
 Example repository of composing React providers with TypeScript
 
+## Published articles
+
+- [How to compose React Providers with TypeScript - GitHub](./how-to-compose-react-providers-with-typescript.md)
+
 ## Vite + ReactJS + TypeScript template
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
