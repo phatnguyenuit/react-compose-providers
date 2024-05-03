@@ -1,11 +1,15 @@
 # How to compose React Providers with TypeScript
 
+![Tree and sunset](sergei-a--heLWtuAN3c-unsplash.jpg)
+
+> Photo by <a href="https://unsplash.com/@sakulich?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sergei A</a> on <a href="https://unsplash.com/photos/pine-trees-field-near-mountain-under-sunset--heLWtuAN3c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 Hi guys 😁!
 Long time no new articles!
 
 Today, I am going to show you how to compose React providers with TypeScript.
 
-Ready?, let's go!
+Ready? let's go!
 
 ## Prerequisites
 
