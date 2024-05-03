@@ -10,9 +10,9 @@ Ready?, let's go!
 ## Prerequisites
 
 - Have ReactJS projects and use React Contexts
-- Have TypeScript projects to understand how typings structured and work in the development environemnt
+- Have TypeScript projects to understand how typings are structured and work in the development environment
 
-If you don't have these two items, it may become a bit hard for you to understand what covered by this article.
+If you don't have these two items, it may become a bit hard for you to understand what is covered by this article.
 
 ## Problem statement
 
@@ -42,9 +42,9 @@ Is there any way to simplify the above JSX tree, just `App` and all context prov
 
 ## Solution
 
-There is some ways to resolve the above problem:
+There are some ways to resolve the above problem:
 
-- Create all-in-one hardcoded Provider which contains all providers we need
+- Create an all-in-one hardcoded Provider that contains all providers we need
 - Create one Provider which receives all providers as a property
 - Create one utility to compose all providers into one provider
 - ... more approaches I have not figured out :\) ...
@@ -79,13 +79,13 @@ becomes
 </AllInOneProvider>
 ```
 
-We can construct one array containing all provider from outside like below:
+We can construct one array containing all providers from outside like below:
 
 ```ts
 const providers = [Provider1, Provider2, Provider3, Provider4];
 ```
 
-If there's a provided children (`<App />`), firstly we think about the last Provider `Provider4`
+If there's a provided `children` (`<App />`), firstly we think about the last Provider `Provider4`
 
 So initially we have:
 
@@ -205,7 +205,7 @@ function composeProviders<TProviders extends Array<Provider<any>>>(
 
 At this step, we have TypeScript types for our utility but looks like it does not work well, because we may have different Context value types.
 
-IDE should suggest us to provide the correct `props` for the given `Provider` instead of type anything as you wish
+IDE should suggest the correct `props` for the given `Provider` instead of typing anything as you wish
 
 In this situation, we will create one more function to prepare `Provider` component details for every single `Provider`
 
@@ -251,7 +251,7 @@ return (
 
 Now, in the root component (App component) you can create only one Provider including all Providers.
 
-This utility is flexible as well, so we can setup our component unit tests in case we just need some providers (not all)
+This utility is flexible as well, so we can set up our component unit tests in case we just need some providers (not all)
 
 ```tsx
 import React from 'react';
@@ -282,5 +282,6 @@ See you next time!
 ## References
 
 - [React Context - React](https://react.dev/reference/react/createContext)
+- [Array.prototype.reduceRight() - JavaScript - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
 - [Escaping Providers Hell: Simplifying Your Typescript React Code with Provider Trees](https://blog.stackademic.com/escaping-providers-hell-simplifying-your-typescript-react-code-with-provider-trees-1422fd8da170)
 - My example code repository: [phatnguyenuit/react-compose-providers: Compose React Providers without stresses](https://github.com/phatnguyenuit/react-compose-providers/)
