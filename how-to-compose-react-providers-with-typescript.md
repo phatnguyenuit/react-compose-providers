@@ -203,7 +203,7 @@ function composeProviders<TProviders extends Array<Provider<any>>>(
 }
 ```
 
-At this step, we have TypeScript types for our utility but looks like it does not work well, because we may have differnt Context value types.
+At this step, we have TypeScript types for our utility but looks like it does not work well, because we may have different Context value types.
 
 IDE should suggest us to provide the correct `props` for the given `Provider` instead of type anything as you wish
 
@@ -229,8 +229,58 @@ const providers = [
 ];
 ```
 
-Wrapping all parts together, we now have `Provider` which contains multiple `Providers` following the article goal
+Wrapping all parts together, we now have `Provider` which contains multiple `Providers` following the article goal.
+
+```tsx
+const providers = [
+  createProvider(Provider1),
+  createProvider(Provider2),
+  createProvider(Provider3),
+  createProvider(Provider4, { value: "someValue" }),
+];
+
+const AllInOneProvider = composeProviders();
+
+// render App
+return (
+  <AllInOneProvider>
+    <App />
+  </AllInOneProvider>
+);
+```
+
+Now, in the root component (App component) you can create only one Provider including all Providers.
+
+This utility is flexible as well, so we can setup our component unit tests in case we just need some providers (not all)
+
+```tsx
+import React from 'react';
+import { render } from '@testing-library/react';
+
+const TestProvider = composeProviders([...])
+
+const setupTest = (testProps: TestComponentProps) => {
+    return render(<TestComponent />, { wrapper: TestProvider });
+}
+```
 
 ## Conclusion
 
+To sum up, we have 4 steps to compose React components with TypeScript:
+
+1. Normalise nested JSX tree
+2. Dead simple implementation of composing utility
+3. Enhance with Provider props
+4. Enhance with TypeScript types
+
+With these 4 steps, we can extract common logic and share everywhere to compose React providers across React projects.
+
+Hope you guys can find it's helpful and may resolve your current concern how to compose React providers with TypeScript.
+
+See you next time!
+
 ## References
+
+- [React Context - React](https://react.dev/reference/react/createContext)
+- [Escaping Providers Hell: Simplifying Your Typescript React Code with Provider Trees](https://blog.stackademic.com/escaping-providers-hell-simplifying-your-typescript-react-code-with-provider-trees-1422fd8da170)
+- My example code repository: [phatnguyenuit/react-compose-providers: Compose React Providers without stresses](https://github.com/phatnguyenuit/react-compose-providers/)
