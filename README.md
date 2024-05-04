@@ -4,6 +4,8 @@ Example repository of composing React providers with TypeScript
 
 ## Published articles
 
+- [How to compose React Providers with TypeScript - Medium.com](https://fastnguyen.medium.com/how-to-compose-react-providers-with-typescript-8dfd7eede827?source=friends_link&sk=486d6e33fd1a5c1d519f383ec3d65d71
+)
 - [How to compose React Providers with TypeScript - GitHub](./how-to-compose-react-providers-with-typescript.md)
 - [How to compose React Providers with TypeScript - Gist](https://gist.github.com/phatnguyenuit/68122170e317d13e7148c7563be021b6)
 
