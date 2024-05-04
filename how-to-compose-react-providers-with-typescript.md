@@ -232,7 +232,7 @@ const providers = [
   createProvider(Provider4, { value: "someValue" }),
 ];
 
-const AllInOneProvider = composeProviders();
+const AllInOneProvider = composeProviders(providers);
 
 // render App
 return (
